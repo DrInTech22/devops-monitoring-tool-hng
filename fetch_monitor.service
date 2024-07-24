@@ -1,0 +1,11 @@
+[Unit]
+Description=Monitoring Script
+After=network.target
+
+[Service]
+ExecStart=/absolute/path/to/fetch_monitor.sh # include the right absolute path to the script
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
