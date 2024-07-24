@@ -79,6 +79,8 @@ The main script devopsfetch.sh provides various options to retrieve and display 
    sudo ./devopsfetch.sh -d                 List all Docker images and containers.
    sudo ./devopsfetch.sh -d my_container    Provide detailed information about 'my_container'.
    ```
+   ![Screenshot (340)](https://github.com/user-attachments/assets/3d362e8e-a697-4e28-b783-769c598512b2)
+
 ## Monitoring
 Devopsfetch implements a systemd service that runs continuously to monitor and log activities of certain services. To activate continuous monitoring, follow these steps:
 1. Make the monitoring script executable
@@ -118,7 +120,12 @@ Devopsfetch implements a systemd service that runs continuously to monitor and l
 `fetch_monitor.sh` continuously logs the status of Users, docker images, containers and active ports. The `fetch_monitor.service` ensure the script is always running and automatically restarts it, if it fails for any reason (failure, or unexpected termination).
 
 ## Log Management
-The monitoring script is responsible for logging activities to the log file `/var/log/fetch_monitor.log`. The script runs service check every one hour and logs the result. Here, we'll effectively manage the log files by leveraging log rotation.
+The monitoring script is responsible for logging activities to the log file `/var/log/fetch_monitor.log`. The script runs service check every one hour and logs the result. 
+
+![Screenshot (344)](https://github.com/user-attachments/assets/e92819d0-c879-45d4-a252-40b0f02e0fc3)
+![Screenshot (343)](https://github.com/user-attachments/assets/b3ac160a-a162-4c66-82bf-8d2b77e970d3)
+
+Here, we'll effectively manage the log files by leveraging log rotation.
 
 1. Stream or view the log file
    ```bash
