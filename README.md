@@ -74,10 +74,10 @@ The main script devopsfetch.sh provides various options to retrieve and display 
   
 4. Detailed example
    ```bash
-   devopsfetch -p                 Display all active ports and services.
-   devopsfetch -p 80              Display detailed information about port 80.
-   devopsfetch -d                 List all Docker images and containers.
-   devopsfetch -d my_container    Provide detailed information about 'my_container'.
+   sudo ./devopsfetch.sh -p                 Display all active ports and services.
+   sudo ./devopsfetch.sh -p 80              Display detailed information about port 80.
+   sudo ./devopsfetch.sh -d                 List all Docker images and containers.
+   sudo ./devopsfetch.sh -d my_container    Provide detailed information about 'my_container'.
    ```
 ## Monitoring
 Devopsfetch implements a systemd service that runs continuously to monitor and log activities of certain services. To activate continuous monitoring, follow these steps:

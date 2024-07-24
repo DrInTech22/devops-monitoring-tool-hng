@@ -1,46 +1,48 @@
 #!/bin/bash
 
+# Check if the script is run as root
+if [[ $UID != 0 ]]; then
+  echo "This script must be run as root."
+  exit 1
+fi
+
+
 # Function to display help message
 function help_feature() {
     cat << 'HELP_EOF'
-Usage: devopsfetch [OPTIONS]
+Usage: sudo ./devopsfetch.sh [OPTIONS] 
 
 Options:
-  -p, --port [PORT_NUMBER]       Display active ports and services or detailed information about a specific port.
-                                 -p                Display all active ports and services.
-                                 -p <port_number>  Provide detailed information about a specific port.
+   -p, --port [PORT_NUMBER]         -p                Display all active ports and services.                       
+                                    -p <port_number>  Provide detailed information about a specific port.
 
-  -d, --docker [CONTAINER_NAME]  List Docker images and containers or detailed information about a specific container.
-                                 -d                List all Docker images and containers.
-                                 -d <container_name> Provide detailed information about a specific container.
+   -d, --docker [CONTAINER_NAME]    -d                List all Docker images and containers.                                 
+                                    -d <container_name> Provide detailed information about a specific container.
 
-  -n, --nginx [DOMAIN]           Display Nginx domains and their ports or detailed configuration for a specific domain.
-                                 -n                Display all Nginx domains and their ports.
-                                 -n <domain>       Provide detailed configuration information for a specific domain.
+   -n, --nginx [DOMAIN]             -n                Display all Nginx domains and their ports.
+                                    -n <domain>       Provide detailed configuration information for a specific domain.
 
-  -u, --users [USERNAME]         List users and their last login times or detailed information about a specific user.
-                                 -u                List all users and their last login times.
-                                 -u <username>     Provide detailed information about a specific user.
+   -u, --users [USERNAME]           -u                List all users and their last login times.                    
+                                    -u <username>     Provide detailed information about a specific user.
 
-  -t, --time [TIME_RANGE]        Display activities within a specified time range.
-                                 -t <date>         Display activities for a specific date (e.g., 2024-07-23).
-                                 -t <start_date> <end_date> Display activities within the specified date range 
-                                                          (e.g., 2024-07-18 2024-07-24).
+   -t, --time [TIME_RANGE]          -t <date>         Display activities for a specific date (e.g., 2024-07-23).
+                                    -t <start_date> <end_date> Display activities within the specified date range 
+                                                            (e.g., 2024-07-18 2024-07-24).
 
-  -h, --help                     Display this help message and exit.
+   -h, --help                        Display this help message and exit.
 
 Examples:
-  devopsfetch -p                 Display all active ports and services.
-  devopsfetch -p 80              Display detailed information about port 80.
-  devopsfetch -d                 List all Docker images and containers.
-  devopsfetch -d my_container    Provide detailed information about 'my_container'.
-  devopsfetch -n                 Display all Nginx domains and their ports.
-  devopsfetch -n example.com     Provide detailed configuration information for 'example.com'.
-  devopsfetch -u                 List all users and their last login times.
-  devopsfetch -u johndoe         Provide detailed information about user 'johndoe'.
-  devopsfetch -t 2024-07-23      Display activities for July 23rd, 2024.
-  devopsfetch -t 2024-07-18 2024-07-24 Display activities from July 18th, 2024 to July 24th, 2024.
-  devopsfetch -h                 Display this help message and exit.
+  sudo ./devopsfetch.sh -p                 Display all active ports and services.
+  sudo ./devopsfetch.sh -p 80              Display detailed information about port 80.
+  sudo ./devopsfetch.sh -d                 List all Docker images and containers.
+  sudo ./devopsfetch.sh -d my_container    Provide detailed information about 'my_container'.
+  sudo ./devopsfetch.sh -n                 Display all Nginx domains and their ports.
+  sudo ./devopsfetch.sh -n example.com     Provide detailed configuration information for 'example.com'.
+  sudo ./devopsfetch.sh -u                 List all users and their last login times.
+  sudo ./devopsfetch.sh -u johndoe         Provide detailed information about user 'johndoe'.
+  sudo ./devopsfetch.sh -t 2024-07-23      Display activities for July 23rd, 2024.
+  sudo ./devopsfetch.sh -t 2024-07-18 2024-07-24 Display activities from July 18th, 2024 to July 24th, 2024.
+  sudo ./devopsfetch.sh -h                 Display this help message and exit.
 
 HELP_EOF
 }
