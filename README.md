@@ -101,7 +101,7 @@ Devopsfetch implements a systemd service that runs continuously to monitor and l
    [Install]
    WantedBy=multi-user.target
    ```
-3. Copy to `fetch_monitor.service` to the systemd directory
+3. Copy `fetch_monitor.service` to the systemd directory
    ```bash
    sudo cp fetch_monitor.service /etc/systemd/system/fetch_monitor.service
    ```
