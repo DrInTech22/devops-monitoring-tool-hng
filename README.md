@@ -19,7 +19,7 @@ Devopsfetch is a cli-based tool designed for DevOps professionals to collect and
 
 1. Clone the Repository
    ```bash
-   git clone https://github.com/yourusername/devopsfetch-hng.git
+   git clone https://github.com/DrInTech22/devopsfetch-hng.git
    cd devopsfetch
    ```
 2. Make the installation script executable
