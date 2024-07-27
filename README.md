@@ -3,7 +3,7 @@
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Prerequisites](#prerequisites)
-3. [Installation](#installation-and-configuration)
+3. [Installation](#installation)
 4. [Usage](#usage)
 5. [Monitoring](#monitoring)
 6. [Log Management](#log-management)
@@ -20,7 +20,7 @@ Devopsfetch is a cli-based tool designed for DevOps professionals to collect and
 1. Clone the Repository
    ```bash
    git clone https://github.com/DrInTech22/devopsfetch-hng.git
-   cd devopsfetch
+   cd devopsfetch-hng
    ```
 2. Make the installation script executable
    ```bash

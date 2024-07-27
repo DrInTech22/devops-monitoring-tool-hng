@@ -345,11 +345,11 @@ function time_feature() {
         return
     elif [ -n "$1" ] && [ -z "$2" ]; then
         start_date="$1"
-        journalctl --since "$start_date 00:00:00" --until "$start_date 23:59:59" # --no-pager
+        journalctl --since "$start_date 00:00:00" --until "$start_date 23:59:59" | more # --no-pager
     elif [ -n "$1" ] && [ -n "$2" ]; then
         start_date="$1"
         end_date="$2"
-        journalctl --since "$start_date 00:00:00" --until "$end_date 23:59:59" # --no-pager
+        journalctl --since "$start_date 00:00:00" --until "$end_date 23:59:59" | more # --no-pager
     else
         echo "Invalid arguments. Please provide valid arguments in this format for date (YYYY-MM-DD) or date range (YYYY-MM-DD YYYY-MM-DD)"
     fi
